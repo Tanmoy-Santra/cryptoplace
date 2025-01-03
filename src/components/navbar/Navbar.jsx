@@ -1,22 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "./src/assets/logo.png";
+import Menu from '/src/assets/menu.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
+  };  
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-md z-50">
+    <>
+    <div className="fixed font-light top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-        {/* Logo */}
+        {Logo}
         <Link to="/" className="text-white text-2xl font-bold">
           Logo
         </Link>
 
-        {/* Hamburger Icon */}
+        {Menu}
         <div
           className="lg:hidden flex flex-col items-center space-y-1 cursor-pointer"
           onClick={toggleMenu}
@@ -70,7 +73,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
+    </>
   );
 };
 
