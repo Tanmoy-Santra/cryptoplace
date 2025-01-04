@@ -1,0 +1,22 @@
+/* Footer styles */
+.footer {
+    background: transparent;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-text {
+    margin: 0;
+  }
+  
+  .footer-logo {
+    font-weight: bold;
+    color: #096778; /* Highlight color */
+  }
+  

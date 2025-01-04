@@ -7,6 +7,7 @@ import Feature from "./pages/Feature";
 import Blog from "./pages/Blog";
 import Navbar from './components/navbar/Navbar'
 import './App.css'
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/blog" element={<Blog></Blog>} />
         </Routes>
       </ErrorBoundary>
+      <Footer/>
     </Router>
   );
 };

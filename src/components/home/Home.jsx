@@ -1,3 +1,4 @@
+import ApiPlanDetails from "../../pages/ApiPlanUsage"
 
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
       
         <h1>Crypto World</h1>
         <p>Secure. Transparent. Revolutionary.</p>
+        <ApiPlanDetails/>
     </div>     
       
 

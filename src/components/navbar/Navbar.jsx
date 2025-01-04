@@ -1,79 +1,81 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./src/assets/logo.png";
-import Menu from '/src/assets/menu.png';
-
+import './navbar.css';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [selectedCurrency, setSelectedCurrency] = useState("USD"); 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
+  };
 
+  const handleCurrencyChange = (currency) => {
+    setSelectedCurrency(currency);
+    setIsDropdownOpen(false); 
+  };
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };  
+  };
 
+ 
   return (
     <>
-    <div className="fixed font-light top-0 left-0 w-full bg-black bg-opacity-70 backdrop-blur-md z-50">
-      <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-        {Logo}
-        <Link to="/" className="text-white text-2xl font-bold">
-          Logo
+    <div className="navbar">
+      <div className="navbar-container">
+        {/* Logo */}
+        <Link to="/" className="navbar-logo">
+        ₿ CryptoPlace
         </Link>
-
-        {Menu}
-        <div
-          className="lg:hidden flex flex-col items-center space-y-1 cursor-pointer"
-          onClick={toggleMenu}
-        >
-          <span className="block w-6 h-1 bg-white"></span>
-          <span className="block w-6 h-1 bg-white"></span>
-          <span className="block w-6 h-1 bg-white"></span>
+        <div className="dropdown ">
+              <button
+                className="dropdown-btn"
+                onClick={toggleDropdown}
+              >
+                {selectedCurrency} ▼
+              </button>
+              {isDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li onClick={() => handleCurrencyChange("USD")}>USD</li>
+                  <li onClick={() => handleCurrencyChange("EUR")}>EUR</li>
+                  <li onClick={() => handleCurrencyChange("INR")}>INR</li>
+                </ul>
+              )}
+            </div>
+        {/* Hamburger Menu */}
+        <div className="navbar-toggler" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
 
         {/* Menu Items */}
-        <ul
-          className={`lg:flex lg:space-x-6 space-y-4 lg:space-y-0 absolute lg:relative top-16 left-0 w-full bg-black lg:bg-transparent bg-opacity-70 backdrop-blur-md transition-all ${
-            isMenuOpen ? "block" : "hidden"
-          }`}
-        >
+        <ul className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
+       
           <li>
-            <Link
-              to="/"
-              className="text-white hover:text-green-400 transition-all"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
           </li>
           <li>
-            <Link
-              to="/features"
-              className="text-white hover:text-green-400 transition-all"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/features" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Features
             </Link>
           </li>
           <li>
-            <Link
-              to="/pricing"
-              className="text-white hover:text-green-400 transition-all"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/pricing" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Pricing
             </Link>
           </li>
           <li>
-            <Link
-              to="/blog"
-              className="text-white hover:text-green-400 transition-all"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <Link to="/blog" className="navbar-link" onClick={() => setIsMenuOpen(false)}>
               Blog
             </Link>
           </li>
         </ul>
       </div>
+      
     </div>
+    <div className="separetor"></div>
     </>
   );
 };
