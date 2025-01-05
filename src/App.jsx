@@ -8,6 +8,7 @@ import Blog from "./pages/Blog";
 import Navbar from './components/navbar/Navbar'
 import './App.css'
 import Footer from "./components/footer/Footer";
+import Coin from "./components/coin/Coin";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <ErrorBoundary>     
         <Routes>
           <Route path="/" element={<Home></Home>} />
+          <Route path="/coin/:coinId" element={<Coin></Coin>}/>
           <Route path="/features" element={<Feature></Feature>} />
           <Route path="/pricing" element={<Pricing></Pricing>} />
           <Route path="/blog" element={<Blog></Blog>} />

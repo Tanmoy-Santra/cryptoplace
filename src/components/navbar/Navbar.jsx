@@ -1,15 +1,47 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CoinContext } from "../../context/CoinContext";
 import './navbar.css';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
   const [selectedCurrency, setSelectedCurrency] = useState("USD"); 
+
+  const {setCurrency}=useContext(CoinContext)
+
+  function currencyHandler(e){
+    console.log(e);
+    
+        switch(e){
+          case "USD":{
+            setCurrency({name:"usd",symbol:'$'});
+            break;
+          }
+          case "EUR":{
+            setCurrency({name:"eur",symbol:"€"});
+            break;
+          }
+          case "INR":{
+            setCurrency({name:"inr",symbol:"₹"});
+            break;
+          }
+          default:{
+            setCurrency({name:"usd",symbol:"$"});
+            break;
+          }
+        }
+  }
+
+useEffect(()=>{
+  currencyHandler(selectedCurrency);
+},[selectedCurrency])
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
   };
 
   const handleCurrencyChange = (currency) => {
+    console.log(currency);
     setSelectedCurrency(currency);
     setIsDropdownOpen(false); 
   };
