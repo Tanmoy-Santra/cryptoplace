@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/coin/:coinId" element={<Coin></Coin>}/>
           <Route path="/features" element={<Feature></Feature>} />
           <Route path="/pricing" element={<Pricing></Pricing>} />
-          <Route path="/blog" element={<Blog></Blog>} />
+          <Route path="/blog" element={<Blog></Blog>} />         
         </Routes>
       </ErrorBoundary>
       <Footer/>

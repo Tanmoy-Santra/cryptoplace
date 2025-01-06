@@ -62,31 +62,40 @@
     margin: auto;
     background-color: aqua;
     border-radius: 15px;
+    font-size: small;
+    text-decoration: none;
+}
+.img_para{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
 }
 
 .table-layout{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1.5fr;
-    padding: 15px 20px;
+    padding: 10px 15px;
     align-items: center;    
-    font-weight: 300;
+    font-weight: 500;
     border-bottom: 1px solid #3c3c3c3c;
     
 }
+
 .market-cap{
     text-align: right;    
 }
 .img{
-    width: 100px;
+    width: 40px;
+    border-radius: 50%;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
      .img{
-        width: 50px;
+        width: 30px;
      } 
      p{
-        font-size: small;
+        font-size: smaller;
      }    
      .table-layout{
         padding: 5px 5px;        
@@ -94,6 +103,12 @@
     .crypto-table{
         width: fit-content;
        
+    }
+
+    .img_para{
+        display: flex;
+        flex-direction: column;
+        
     }
 
     .hero form{
