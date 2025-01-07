@@ -1,0 +1,70 @@
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    background: transparent;   
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+  }
+  
+  /* .hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+  }
+   */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  /* Google Login Button Styling */
+  .google-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #4285f4; /* Google Blue */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 250px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .google-login-btn:hover {
+    background-color: #3367d6;
+  }
+  
+  .google-login-btn:focus {
+    outline: none;
+  }
+  
+  .google-icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
