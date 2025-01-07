@@ -1,10 +1,17 @@
+import Footer from "../components/footer/Footer"
+import Navbar from "../components/navbar/Navbar"
 
 
 const Feature = () => {
+  
   return (
+    <>
+    <Navbar></Navbar>
     <div>
-      Feature Feature Feature
+      features
     </div>
+    <Footer/>
+    </>
   )
 }
 

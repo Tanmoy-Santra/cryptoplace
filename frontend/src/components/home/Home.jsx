@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useState } from 'react';
 import './home.css';
 import { CoinContext } from '../../context/CoinContext';
@@ -6,6 +5,10 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Home = () => {
 
   const {allCoin,currency}=useContext(CoinContext);
@@ -48,12 +51,14 @@ const Home = () => {
 
   useEffect(()=>{
       const data = localStorage.getItem('user-info');
+      toast.success('Login successfully ..');
       const userData = JSON.parse(data);
       setUserInfo(userData);
   },[])
 
   const handleLogout = ()=>{
       localStorage.removeItem('user-info');
+      toast.info('Logged out successfully ..');
       navigate('/login');
   }
 

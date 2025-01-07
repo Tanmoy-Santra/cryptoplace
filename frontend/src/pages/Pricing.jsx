@@ -1,10 +1,16 @@
+import Footer from "../components/footer/Footer"
+import Navbar from "../components/navbar/Navbar"
 
 
 const Pricing = () => {
-  return (
+   return (
+    <>
+    <Navbar/>
     <div>
-      pricing pricing pticing
+      pricing 
     </div>
+    <Footer/>
+    </>
   )
 }
 

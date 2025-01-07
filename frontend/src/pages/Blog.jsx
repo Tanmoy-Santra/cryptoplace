@@ -1,8 +1,16 @@
+import Footer from "../components/footer/Footer"
+import Navbar from "../components/navbar/Navbar"
 
 const Blog = () => {
+  
   return (
     <div>
-      Blog blog blog
+    <Navbar></Navbar>
+    <div>
+
+      Blog 
+    </div>
+      <Footer/>
     </div>
   )
 }
