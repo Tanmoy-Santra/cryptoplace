@@ -7,8 +7,13 @@ body {
     background-attachment: fixed; 
 }
 @media screen and (max-width : 768px){
-    body{
-        background: linear-gradient(135deg, #00c6ff, #0072ff, #2af598);        
-    }
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh; /* Make sure the element covers the whole viewport */
+        background: linear-gradient(135deg, #00c6ff, #0072ff, #2af598);
+        background-size: cover; /* Prevent the gradient from repeating */
+        background-attachment: fixed; /* Fix the gradient when scrolling (optional) */
+      }
 
 }
