@@ -7,7 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const PORT = process.env.PORT || 8080;
 
 // app.use(cors());
-app.use(cors({ origin: `${process.env.FRONTEND_URL}` })); 
+app.use(cors({ origin: `${process.env.FRONTEND_URL}` ,credentials: true })); 
 app.use('/auth/', authRoutes); // <- NEW LINE
 
 app.all('*', (req, res, next) => {
