@@ -24,7 +24,7 @@ const App = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const GoogleWrapper = ()=>(
-		<GoogleOAuthProvider clientId=`${import.meta.env.VITE_AUTH_CLIENT_ID}`>
+		<GoogleOAuthProvider clientId={import.meta.env.VITE_AUTH_CLIENT_ID}>
 			<GoolgeLogin></GoolgeLogin>
 		</GoogleOAuthProvider>
 	)
