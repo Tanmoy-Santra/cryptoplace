@@ -6,3 +6,9 @@ body {
     height: 100vh;
     background-attachment: fixed; 
 }
+@media screen and (max-width : 768px){
+    body{
+        background: linear-gradient(135deg, #00c6ff, #0072ff, #2af598);        
+    }
+
+}
