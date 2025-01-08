@@ -3,6 +3,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { googleAuth } from "../../api";
 import {useNavigate} from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa"
+import { toast } from "react-toastify";
 import './google.css'
 const GoolgeLogin = (props) => {
 	const [user, setUser] = useState(null);
@@ -15,6 +16,7 @@ const GoolgeLogin = (props) => {
 				const token = result.data.token;
 				const obj = {email,name, token, image};
 				localStorage.setItem('user-info',JSON.stringify(obj));
+				toast.success('Login successfully ..');
 				navigate('/home');
 			} else {
 				console.log(authResult);

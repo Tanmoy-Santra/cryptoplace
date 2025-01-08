@@ -52,8 +52,7 @@ const Home = () => {
   useEffect(()=>{
       const data = localStorage.getItem('user-info');
       const userData = JSON.parse(data);
-      setUserInfo(userData);
-      toast.success('Login successfully ..');
+      setUserInfo(userData);      
   },[])
 
   const handleLogout = ()=>{
