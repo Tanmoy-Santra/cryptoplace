@@ -49,7 +49,7 @@ const Coin = () => {
       setHistoricalData(data);
               
     } catch (error) {
-      console.error(error);            
+      console.error('ftcherror : ',error);            
     }
   }
 
